@@ -66,6 +66,14 @@ function webform_archive_menu() {
     'type' => MENU_LOCAL_TASK,
     'file' => 'includes/webform_archive.admin.inc',
   );
+  // Registering a path for reverting the archived webforms.
+  $items['admin/content/webform/archive-revert'] = array(
+    'title' => 'Revert Archived Webforms',
+    'page callback' => 'webform_archive_revert_page',
+    'access arguments' => array('administer webform archive'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'includes/webform_archive.revert.inc',
+  );
 
   // Download report link for the webforms.
   $items['node/%webform_menu/webform-results/download-reports'] = array(
